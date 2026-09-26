@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>M. Samsul Hadi | Profil & Portofolio</title>
+  <meta name="description" content="Website resmi M. Samsul Hadi. Temukan profil, pendidikan, aktivitas, karya, dan portofolio M. Samsul Hadi.">
+  <meta name="author" content="M. Samsul Hadi">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="M. Samsul Hadi | Profil & Portofolio">
+  <meta property="og:description" content="Profil, pendidikan, aktivitas, karya, dan portofolio M. Samsul Hadi.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, .08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .brand span { color: var(--primary); }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      font-size: .95rem;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .hero {
+      padding: 100px 0 80px;
+      background: linear-gradient(135deg, #eff6ff, #ffffff 60%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      background: #dbeafe;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: .85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 4.8rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-primary:hover { background: var(--primary-dark); }
+
+    .profile-card {
+      background: var(--surface);
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #dbeafe;
+      color: var(--primary);
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    section { padding: 80px 0; }
+
+    .section-title {
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .section-title p { color: var(--muted); }
+
+    .about-grid,
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .about-box,
+    .card {
+      background: var(--surface);
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(15,23,42,.04);
+    }
+
+    .about-box h3,
+    .card h3 { margin-bottom: 10px; }
+
+    .about-box p,
+    .card p { color: var(--muted); }
+
+    .education {
+      background: #0f172a;
+      color: white;
+    }
+
+    .education .section-title p,
+    .education .card p { color: #cbd5e1; }
+
+    .education .card {
+      background: #1e293b;
+      border-color: #334155;
+    }
+
+    .contact-box {
+      background: var(--surface);
+      padding: 35px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      background: white;
+      color: var(--muted);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid,
+      .about-grid,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding: 70px 0; }
+
+      .nav-links {
+        display: none;
+      }
+
+      h1 { letter-spacing: -1px; }
+    }
+  </style>
+
+  <!-- Structured data membantu mesin pencari memahami identitas halaman -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "M. Samsul Hadi",
+    "url": "https://contoh-domain-anda.com/",
+    "jobTitle": "Mahasiswa",
+    "description": "Profil dan portofolio M. Samsul Hadi."
+  }
+  </script>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav aria-label="Navigasi utama">
+      <a class="brand" href="#beranda">M. Samsul <span>Hadi</span></a>
+      <ul class="nav-links">
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#pendidikan">Pendidikan</a></li>
+        <li><a href="#karya">Karya</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="beranda">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Profil Pribadi</span>
+        <h1>M. Samsul Hadi</h1>
+        <p>
+          Selamat datang di website pribadi M. Samsul Hadi.
+          Website ini berisi informasi mengenai profil, pendidikan,
+          aktivitas, karya, dan portofolio.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="#tentang">Kenali Saya</a>
+          <a class="btn" href="#karya">Lihat Karya</a>
+        </div>
+      </div>
+
+      <aside class="profile-card" aria-label="Profil singkat">
+        <div class="avatar" aria-hidden="true">MSH</div>
+        <h2>M. Samsul Hadi</h2>
+        <p>Mahasiswa & Pengembang Diri</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="tentang">
+    <div class="container">
+      <div class="section-title">
+        <h2>Tentang M. Samsul Hadi</h2>
+        <p>Informasi singkat mengenai profil dan aktivitas.</p>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-box">
+          <h3>Profil</h3>
+          <p>
+            M. Samsul Hadi merupakan individu yang sedang mengembangkan
+            kemampuan akademik, keterampilan, pengalaman, dan wawasan
+            melalui berbagai kegiatan.
+          </p>
+        </article>
+
+        <article class="about-box">
+          <h3>Bidang Minat</h3>
+          <p>
+            Pendidikan, manajemen pendidikan, penulisan, kewirausahaan,
+            pengembangan diri, dan aktivitas digital.
+          </p>
+        </article>
+
+        <article class="about-box">
+          <h3>Tujuan</h3>
+          <p>
+            Mendokumentasikan perjalanan pendidikan, karya, pengalaman,
+            serta berbagai aktivitas yang dapat memberikan manfaat.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="education" id="pendidikan">
+    <div class="container">
+      <div class="section-title">
+        <h2>Pendidikan</h2>
+        <p>Riwayat pendidikan dapat diperbarui sesuai data sebenarnya.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Perguruan Tinggi</h3>
+          <p><strong>Program Studi:</strong> Manajemen Pendidikan Islam</p>
+          <p><strong>Kampus:</strong> [Nama Kampus]</p>
+          <p><strong>Tahun:</strong> [Tahun Masuk]</p>
+        </article>
+
+        <article class="card">
+          <h3>Pengembangan Akademik</h3>
+          <p>
+            Kegiatan penulisan makalah, proposal penelitian, jurnal,
+            dan berbagai tugas akademik.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Pengembangan Keterampilan</h3>
+          <p>
+            Pengembangan kemampuan digital, komunikasi, kewirausahaan,
+            dan keterampilan lain yang relevan.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="karya">
+    <div class="container">
+      <div class="section-title">
+        <h2>Karya & Aktivitas</h2>
+        <p>Beberapa bidang karya yang dapat ditampilkan di website.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Karya Tulis</h3>
+          <p>
+            Artikel, makalah, proposal penelitian, dan tulisan akademik.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Portofolio</h3>
+          <p>
+            Dokumentasi proyek, pengalaman, kegiatan, dan hasil pekerjaan.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Aktivitas Digital</h3>
+          <p>
+            Aktivitas di bidang digital, konten, media sosial, dan
+            pengembangan proyek pribadi.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="container">
+      <div class="contact-box">
+        <div class="section-title">
+          <h2>Hubungi M. Samsul Hadi</h2>
+          <p>
+            Informasi kontak dapat ditambahkan di bagian ini.
+          </p>
+        </div>
+
+        <!-- Ganti bagian berikut dengan kontak publik yang ingin ditampilkan -->
+        <p><strong>Email:</strong> [email-kamu@example.com]</p>
+        <p><strong>Instagram:</strong> [@username]</p>
+        <p><strong>WhatsApp:</strong> [Nomor WhatsApp]</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; <span id="year"></span> M. Samsul Hadi. Semua hak dilindungi.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
